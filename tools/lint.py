@@ -33,7 +33,7 @@ for y in years:
         st = t.get('steps', [])
         if not 3 <= len(st) <= 6 or any(not s.get('hint') or not s.get('calc') for s in st): bad.append((tag, 'steps'))
         for p, s in strings(d):
-            if re.search(r'[\x00-\x08\x0b-\x1f]', s): bad.append((tag, 'control char (bad escape?)', p))
+            if re.search(r'[\x00-\x1f]', s): bad.append((tag, 'control char (bad escape?)', p))
             if s.count('$') % 2: bad.append((tag, 'unbalanced $', p))
             if '座標' in s: bad.append((tag, '座標→坐標', p))
             if p.endswith('.tex') or '.vars' in p:
