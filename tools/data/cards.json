@@ -1,0 +1,132 @@
+{
+"U01": [
+ {"name": "數線上兩點距離", "tex": "\\overline{AB}=|b-a|", "note": "必背；$A(a)$、$B(b)$ 在數線上，距離一定非負。"},
+ {"name": "絕對值的意義", "tex": "|a|=\\begin{cases}a, & a\\ge0\\\\-a, & a<0\\end{cases}", "note": "必背；$|a|$ 是 $a$ 到原點的距離。"},
+ {"name": "指數律", "tex": "a^m\\times a^n=a^{m+n},\\quad a^m\\div a^n=a^{m-n},\\quad (a^m)^n=a^{mn}", "note": "必背；$a\\ne0$，$m$、$n$ 為整數；$a^0=1$。"},
+ {"name": "負指數", "tex": "a^{-n}=\\dfrac{1}{a^n}", "note": "必背；$a\\ne0$。"},
+ {"name": "科學記號", "tex": "a\\times10^{n},\\quad 1\\le a<10", "note": "必背；$n$ 為整數，比大小先比 $n$ 再比 $a$。"},
+ {"name": "分數的除法", "tex": "\\dfrac{a}{b}\\div\\dfrac{c}{d}=\\dfrac{a}{b}\\times\\dfrac{d}{c}", "note": "必背；$b$、$c$、$d$ 都不為 $0$。帶分數先化成假分數再算。"}
+],
+"U02": [
+ {"name": "質因數分解", "tex": "n=p_1^{a_1}\\times p_2^{a_2}\\times\\cdots\\times p_k^{a_k}", "note": "必背；$p_i$ 為相異質數，每個大於 $1$ 的整數都只有一種分解方式。"},
+ {"name": "正因數個數", "tex": "(a_1+1)(a_2+1)\\cdots(a_k+1)", "note": "要會推；由質因數分解的指數各加 $1$ 再相乘。"},
+ {"name": "最大公因數與最小公倍數", "tex": "(a,b)\\times[a,b]=a\\times b", "note": "必背；只適用兩個正整數。"},
+ {"name": "標準分解求公因數、公倍數", "tex": "(a,b)\\text{ 取共同質因數的較小次方},\\ [a,b]\\text{ 取所有質因數的較大次方}", "note": "必背；三個數以上也用同樣的方法。"},
+ {"name": "倍數判別", "tex": "3\\mid n\\iff 3\\mid\\text{各位數字和}", "note": "必背；$9$ 同理；$4$ 看末兩位，$8$ 看末三位，$11$ 看奇偶位數字和的差。"}
+],
+"U03": [
+ {"name": "等量公理", "tex": "a=b\\Rightarrow a\\pm c=b\\pm c,\\ ac=bc", "note": "必背；兩邊同除時 $c\\ne0$。"},
+ {"name": "移項", "tex": "x+a=b\\Rightarrow x=b-a", "note": "必背；移到等號另一邊要變號。"},
+ {"name": "不等式乘除負數", "tex": "a>b,\\ c<0\\Rightarrow ac<bc", "note": "必背；乘或除以負數，不等號要變向。"},
+ {"name": "應用題列式", "tex": "\\text{總價}=\\text{單價}\\times\\text{數量},\\quad \\text{距離}=\\text{速率}\\times\\text{時間}", "note": "要會推；先設未知數，再用題目中的等量關係列式。"}
+],
+"U04": [
+ {"name": "代入消去法", "tex": "\\begin{cases}y=ax+b\\\\cx+dy=e\\end{cases}\\Rightarrow cx+d(ax+b)=e", "note": "必背；適合有一式已解出 $x$ 或 $y$ 的情形。"},
+ {"name": "加減消去法", "tex": "\\text{把同一未知數的係數調成相同或相反，再相減或相加}", "note": "必背；兩式整數係數時最快。"},
+ {"name": "聯立方程式的解與圖形", "tex": "\\text{解}(x,y)\\iff\\text{兩直線的交點}", "note": "必背；兩線平行時無解，重合時有無限多解。"}
+],
+"U05": [
+ {"name": "比例式", "tex": "a:b=c:d\\iff ad=bc", "note": "必背；內項乘積等於外項乘積，$b$、$d$ 不為 $0$。"},
+ {"name": "連比", "tex": "a:b=2:3,\\ b:c=4:5\\Rightarrow a:b:c=8:12:15", "note": "要會推；把共同項 $b$ 調成相同的數。"},
+ {"name": "正比", "tex": "y=kx\\ (k\\ne0)", "note": "必背；$\\dfrac{y}{x}$ 為定值，圖形是通過原點的直線。"},
+ {"name": "反比", "tex": "xy=k\\ (k\\ne0)", "note": "必背；$x$ 變為 $2$ 倍時 $y$ 變為 $\\dfrac{1}{2}$ 倍。"}
+],
+"U06": [
+ {"name": "兩點距離", "tex": "\\overline{AB}=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}", "note": "必背；就是畢氏定理。"},
+ {"name": "斜率", "tex": "m=\\dfrac{y_2-y_1}{x_2-x_1}", "note": "必背；$x_1\\ne x_2$，鉛直線沒有斜率。"},
+ {"name": "一次函數", "tex": "y=ax+b", "note": "必背；$a$ 為斜率，$b$ 為 $y$ 截距；$a=0$ 時為常數函數，圖形是水平線。"},
+ {"name": "截距", "tex": "x\\text{ 截距：令 }y=0;\\quad y\\text{ 截距：令 }x=0", "note": "必背；截距可以是負數，不是距離。"},
+ {"name": "象限", "tex": "\\text{第一象限 }(+,+),\\ \\text{第二 }(-,+),\\ \\text{第三 }(-,-),\\ \\text{第四 }(+,-)", "note": "必背；在坐標軸上的點不屬於任何象限。"}
+],
+"U07": [
+ {"name": "和的平方", "tex": "(a+b)^2=a^2+2ab+b^2", "note": "必背。"},
+ {"name": "差的平方", "tex": "(a-b)^2=a^2-2ab+b^2", "note": "必背。"},
+ {"name": "平方差", "tex": "(a+b)(a-b)=a^2-b^2", "note": "必背；速算 $99\\times101$ 常用。"},
+ {"name": "多項式除法", "tex": "f(x)=g(x)\\cdot Q(x)+R(x)", "note": "必背；餘式次數小於除式次數。"}
+],
+"U08": [
+ {"name": "畢氏定理", "tex": "a^2+b^2=c^2", "note": "必背；$c$ 為直角三角形的斜邊；反過來也成立。"},
+ {"name": "根式化簡", "tex": "\\sqrt{a^2b}=a\\sqrt{b}", "note": "必背；$a>0$、$b\\ge0$，化成最簡根式。"},
+ {"name": "根式乘除", "tex": "\\sqrt{a}\\times\\sqrt{b}=\\sqrt{ab},\\quad \\dfrac{\\sqrt{a}}{\\sqrt{b}}=\\sqrt{\\dfrac{a}{b}}", "note": "必背；$a\\ge0$、$b>0$。"},
+ {"name": "分母有理化", "tex": "\\dfrac{1}{\\sqrt{a}}=\\dfrac{\\sqrt{a}}{a}", "note": "必背；最後答案的分母不含根號。"},
+ {"name": "特殊直角三角形", "tex": "30^\\circ\\!-\\!60^\\circ\\!-\\!90^\\circ:\\ 1:\\sqrt{3}:2;\\quad 45^\\circ\\!-\\!45^\\circ\\!-\\!90^\\circ:\\ 1:1:\\sqrt{2}", "note": "必背；邊長比依角度由小到大對應。"},
+ {"name": "根號估值", "tex": "n^2<a<(n+1)^2\\Rightarrow n<\\sqrt{a}<n+1", "note": "要會推；先找夾住 $a$ 的兩個完全平方數。"}
+],
+"U09": [
+ {"name": "提公因式", "tex": "ab+ac=a(b+c)", "note": "必背；先提公因式再做其他分解。"},
+ {"name": "十字交乘", "tex": "acx^2+(ad+bc)x+bd=(ax+b)(cx+d)", "note": "必背。"},
+ {"name": "配方法", "tex": "x^2+bx=\\left(x+\\dfrac{b}{2}\\right)^2-\\dfrac{b^2}{4}", "note": "要會推；公式解就是由配方法推出。"},
+ {"name": "公式解", "tex": "ax^2+bx+c=0\\Rightarrow x=\\dfrac{-b\\pm\\sqrt{b^2-4ac}}{2a}", "note": "必背；$a\\ne0$。"},
+ {"name": "判別式", "tex": "D=b^2-4ac", "note": "必背；$D>0$ 兩相異根，$D=0$ 重根，$D<0$ 無實數解。"}
+],
+"U10": [
+ {"name": "等差數列一般項", "tex": "a_n=a_1+(n-1)d", "note": "必背；$d$ 為公差。"},
+ {"name": "等差級數和", "tex": "S_n=\\dfrac{n(a_1+a_n)}{2}=\\dfrac{n[2a_1+(n-1)d]}{2}", "note": "必背；首項加末項，乘項數，除以 $2$。"},
+ {"name": "等差中項", "tex": "b=\\dfrac{a+c}{2}", "note": "必背；$a$、$b$、$c$ 成等差。"},
+ {"name": "等比數列一般項", "tex": "a_n=a_1\\times r^{n-1}", "note": "必背；$r$ 為公比，$a_1\\ne0$、$r\\ne0$。"},
+ {"name": "等比中項", "tex": "b^2=ac", "note": "必背；$a$、$b$、$c$ 成等比。"},
+ {"name": "項數", "tex": "n=\\dfrac{a_n-a_1}{d}+1", "note": "要會推；常見錯誤是忘了加 $1$。"}
+],
+"U11": [
+ {"name": "二次函數頂點式", "tex": "y=a(x-h)^2+k", "note": "必背；頂點 $(h,k)$，對稱軸 $x=h$。"},
+ {"name": "開口方向", "tex": "a>0\\text{ 開口向上，有最小值};\\ a<0\\text{ 開口向下，有最大值}", "note": "必背；$|a|$ 越大，開口越小。"},
+ {"name": "一般式的頂點", "tex": "y=ax^2+bx+c\\Rightarrow x=-\\dfrac{b}{2a}", "note": "要會推；由配方法得到。"},
+ {"name": "與 x 軸交點", "tex": "b^2-4ac>0,\\ =0,\\ <0\\Rightarrow 2,\\ 1,\\ 0\\text{ 個交點}", "note": "必背；交點的 $x$ 坐標就是 $ax^2+bx+c=0$ 的解。"},
+ {"name": "平移", "tex": "y=ax^2\\to y=a(x-h)^2+k", "note": "必背；向右 $h$、向上 $k$；平移不改變 $a$。"}
+],
+"U12": [
+ {"name": "三角形內角和", "tex": "\\angle A+\\angle B+\\angle C=180^\\circ", "note": "必背；外角等於兩個不相鄰內角的和。"},
+ {"name": "多邊形內角和", "tex": "(n-2)\\times180^\\circ", "note": "必背；$n$ 邊形；外角和恆為 $360^\\circ$。"},
+ {"name": "正多邊形一個內角", "tex": "\\dfrac{(n-2)\\times180^\\circ}{n}", "note": "必背；一個外角為 $\\dfrac{360^\\circ}{n}$。"},
+ {"name": "平行線性質", "tex": "L_1\\parallel L_2\\Rightarrow\\text{同位角相等、內錯角相等、同側內角互補}", "note": "必背；反過來可用來判斷平行。"},
+ {"name": "全等性質", "tex": "SSS,\\ SAS,\\ ASA,\\ AAS,\\ RHS", "note": "必背；$SSA$ 不一定全等。"},
+ {"name": "三角形邊長關係", "tex": "|a-b|<c<a+b", "note": "必背；任兩邊之和大於第三邊。"},
+ {"name": "常見面積", "tex": "\\text{梯形}=\\dfrac{(\\text{上底}+\\text{下底})\\times\\text{高}}{2},\\quad \\text{菱形}=\\dfrac{d_1d_2}{2}", "note": "必背；菱形、箏形面積為對角線乘積的一半。"}
+],
+"U13": [
+ {"name": "相似判別", "tex": "AA,\\ SAS,\\ SSS", "note": "必背；$SAS$ 是兩邊成比例且夾角相等。"},
+ {"name": "相似形的比", "tex": "\\text{邊長比}=k\\Rightarrow\\text{周長比}=k,\\ \\text{面積比}=k^2", "note": "必背；立體的體積比為 $k^3$。"},
+ {"name": "平行線截比例線段", "tex": "\\overline{DE}\\parallel\\overline{BC}\\Rightarrow\\dfrac{\\overline{AD}}{\\overline{DB}}=\\dfrac{\\overline{AE}}{\\overline{EC}}", "note": "必背；$D$、$E$ 分別在 $\\overline{AB}$、$\\overline{AC}$ 上。"},
+ {"name": "三角形兩邊中點連線", "tex": "\\overline{DE}\\parallel\\overline{BC},\\ \\overline{DE}=\\dfrac{1}{2}\\overline{BC}", "note": "必背；$D$、$E$ 為 $\\overline{AB}$、$\\overline{AC}$ 中點。"},
+ {"name": "等高三角形面積比", "tex": "\\dfrac{\\triangle ABD}{\\triangle ADC}=\\dfrac{\\overline{BD}}{\\overline{DC}}", "note": "要會推；$D$ 在 $\\overline{BC}$ 上，兩三角形同高。"},
+ {"name": "直角三角形母子相似", "tex": "\\overline{AD}^2=\\overline{BD}\\times\\overline{DC}", "note": "要會推；$\\angle BAC=90^\\circ$，$\\overline{AD}\\perp\\overline{BC}$。"}
+],
+"U14": [
+ {"name": "圓心角與弧", "tex": "\\overset{\\frown}{AB}\\text{ 的度數}=\\angle AOB", "note": "必背；$O$ 為圓心。"},
+ {"name": "圓周角", "tex": "\\angle ACB=\\dfrac{1}{2}\\overset{\\frown}{AB}", "note": "必背；同弧所對圓周角相等，半圓所對圓周角為 $90^\\circ$。"},
+ {"name": "圓內接四邊形", "tex": "\\angle A+\\angle C=180^\\circ", "note": "必背；對角互補。"},
+ {"name": "切線性質", "tex": "\\overline{OP}\\perp L", "note": "必背；$P$ 為切點；圓外一點的兩切線段等長。"},
+ {"name": "弦心距", "tex": "d^2+\\left(\\dfrac{\\ell}{2}\\right)^2=r^2", "note": "必背；$\\ell$ 為弦長，圓心到弦的垂線平分弦。"},
+ {"name": "弧長與扇形面積", "tex": "\\text{弧長}=2\\pi r\\times\\dfrac{\\theta}{360^\\circ},\\quad \\text{扇形面積}=\\pi r^2\\times\\dfrac{\\theta}{360^\\circ}", "note": "必背；$\\theta$ 為圓心角。"},
+ {"name": "點、直線與圓的關係", "tex": "d<r\\ \\text{相割},\\ d=r\\ \\text{相切},\\ d>r\\ \\text{相離}", "note": "必背；$d$ 為圓心到直線的距離。"}
+],
+"U15": [
+ {"name": "外心", "tex": "\\overline{OA}=\\overline{OB}=\\overline{OC}", "note": "必背；三邊中垂線交點；直角三角形外心在斜邊中點。"},
+ {"name": "外心與角", "tex": "\\angle BOC=2\\angle A", "note": "必背；$\\angle A$ 為銳角時成立。"},
+ {"name": "內心", "tex": "\\angle BIC=90^\\circ+\\dfrac{1}{2}\\angle A", "note": "必背；三內角平分線交點，到三邊等距。"},
+ {"name": "內切圓半徑", "tex": "\\triangle ABC\\text{ 面積}=\\dfrac{1}{2}r(a+b+c)", "note": "必背；直角三角形另有 $r=\\dfrac{a+b-c}{2}$。"},
+ {"name": "重心", "tex": "\\overline{AG}:\\overline{GD}=2:1", "note": "必背；三中線交點，$D$ 為 $\\overline{BC}$ 中點；三中線把三角形分成面積相等的六塊。"},
+ {"name": "正三角形", "tex": "\\text{高}=\\dfrac{\\sqrt{3}}{2}a,\\quad \\text{面積}=\\dfrac{\\sqrt{3}}{4}a^2", "note": "必背；外心、內心、重心重合。"}
+],
+"U16": [
+ {"name": "柱體體積", "tex": "V=B\\times h", "note": "必背；$B$ 為底面積，$h$ 為高。"},
+ {"name": "錐體體積", "tex": "V=\\dfrac{1}{3}B\\times h", "note": "必背；同底同高的錐體是柱體的 $\\dfrac{1}{3}$。"},
+ {"name": "柱體表面積", "tex": "S=2B+\\text{底面周長}\\times h", "note": "要會推；由展開圖得到。"},
+ {"name": "圓柱", "tex": "V=\\pi r^2h,\\quad \\text{側面積}=2\\pi rh", "note": "必背；側面展開是長方形。"},
+ {"name": "正方體展開圖", "tex": "11\\text{ 種}", "note": "提醒；相對的兩面在展開圖中不會相鄰。"}
+],
+"U17": [
+ {"name": "算術平均數", "tex": "\\bar{x}=\\dfrac{x_1+x_2+\\cdots+x_n}{n}", "note": "必背；分組資料用組中點乘次數。"},
+ {"name": "加權平均", "tex": "\\bar{x}=\\dfrac{w_1x_1+w_2x_2+\\cdots+w_nx_n}{w_1+w_2+\\cdots+w_n}", "note": "必背。"},
+ {"name": "中位數", "tex": "n\\text{ 奇數取第 }\\dfrac{n+1}{2}\\text{ 個};\\ n\\text{ 偶數取第 }\\dfrac{n}{2}\\text{、}\\dfrac{n}{2}+1\\text{ 個的平均}", "note": "必背；資料要先由小到大排好。"},
+ {"name": "四分位數", "tex": "Q_1,\\ Q_2,\\ Q_3", "note": "必背；$Q_2$ 是中位數，$Q_1$、$Q_3$ 是前後半的中位數；四分位距 $Q_3-Q_1$。"},
+ {"name": "盒狀圖", "tex": "\\text{最小值}-Q_1-Q_2-Q_3-\\text{最大值}", "note": "必背；每一段約含 $25\\%$ 的資料，盒子長不代表人數多。"},
+ {"name": "全距", "tex": "\\text{全距}=\\text{最大值}-\\text{最小值}", "note": "必背。"}
+],
+"U18": [
+ {"name": "古典機率", "tex": "P(A)=\\dfrac{n(A)}{n(S)}", "note": "必背；樣本空間中每個結果出現的機會要相等。"},
+ {"name": "機率範圍", "tex": "0\\le P(A)\\le1", "note": "必背；必然事件為 $1$，不可能事件為 $0$。"},
+ {"name": "餘事件", "tex": "P(A)+P(\\text{非 }A)=1", "note": "要會推；「至少一個」常用餘事件算。"},
+ {"name": "樹狀圖計數", "tex": "\\text{總數}=m\\times n", "note": "要會推；第一步 $m$ 種、第二步 $n$ 種。取出放回與不放回要分清楚。"}
+]
+}
