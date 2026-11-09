@@ -1,7 +1,14 @@
 # Build the 會考數學 site from the 學測 site engine (ref/index.html) + data/*.json
 import json, os, re, sys
-ROOT = os.path.dirname(os.path.abspath(__file__))
-P = lambda *a: os.path.join(ROOT, *a)
+# Run from anywhere: python -X utf8 tools/build.py
+# Reads tools/template.html (the 學測 site engine) + tools/data/*.json, writes index.html at the repo root.
+TOOLS = os.path.dirname(os.path.abspath(__file__))
+REPO = os.path.dirname(TOOLS)
+def P(*a):
+    if a[0] == 'site': return os.path.join(REPO, *a[1:])
+    if a[0] == 'data': return os.path.join(TOOLS, 'data', *a[1:])
+    if a[0] == 'ref': return os.path.join(TOOLS, 'template.html')
+    return os.path.join(REPO, *a)
 
 src = open(P('ref', 'index.html'), encoding='utf-8').read()
 lines = src.split('\n')
@@ -13,7 +20,8 @@ def rep(s, old, new, count=1):
     return s.replace(old, new)
 
 # ---------- data ----------
-YEARS = [111, 112, 113, 114, 115]
+# the site shows the five most recent years that have data/<year>.json
+YEARS = sorted(int(f[:3]) for f in os.listdir(P('data')) if re.fullmatch(r'\d{3}\.json', f))[-5:]
 DATA = []
 for y in YEARS:
     f = P('data', f'{y}.json')
@@ -49,16 +57,16 @@ n_q = len(DATA)
 n_pass = [d['rate'] for d in DATA if d.get('rate') is not None]
 
 # ---------- head / masthead ----------
-desc = f'看懂命題趨勢，找到備考方向。111–115 年國中教育會考數學科共 {n_q} 題，依單元整理出題次數、通過率與難度，附原題、答案與解題引導。'
+desc = f'看懂命題趨勢，找到備考方向。{YEARS[0]}–{YEARS[-1]} 年國中教育會考數學科共 {n_q} 題，依單元整理出題次數、通過率與難度，附原題、答案與解題引導。'
 s = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{desc}">', s)
 s = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="會考數學考點導航">', s)
 s = re.sub(r'<meta property="og:description" content="[^"]*">', f'<meta property="og:description" content="{desc}">', s)
 s = re.sub(r'<meta property="og:image" content="[^"]*">\n?', '', s)
 s = rep(s, '<title>數學考點導航</title>', '<title>會考數學考點導航</title>')
-s = rep(s, '<div class="eyebrow">111–115 學年度｜學測數 A・數 B｜分科數甲・數乙</div>', '<div class="eyebrow">111–115 年｜國中教育會考｜數學科</div>')
+s = rep(s, '<div class="eyebrow">111–115 學年度｜學測數 A・數 B｜分科數甲・數乙</div>', f'<div class="eyebrow">{YEARS[0]}–{YEARS[-1]} 年｜國中教育會考｜數學科</div>')
 s = rep(s, '<h1>數學考點導航</h1>', '<h1>會考數學考點導航</h1>')
 s = rep(s, '<p>大考數學，不只是做過多少題，更重要的是看懂考題背後的觀念與脈絡。</p>', '<p>會考數學，不只是做過多少題，更重要的是看懂考題背後的觀念與脈絡。</p>')
-s = re.sub(r'<p>從近五年 17 份大考試卷出發.*?</p>', '<p>從近五年 5 份會考數學試卷、共 135 題出發，將歷屆試題依國中數學單元重新整理，透過出題次數、全國通過率與難度分析，幫助你掌握各單元的命題分布。從考點分析到實際練習，讓每一次複習都有方向。</p>', s, flags=re.S)
+s = re.sub(r'<p>從近五年 17 份大考試卷出發.*?</p>', f'<p>從近五年 {len(YEARS)} 份會考數學試卷、共 {n_q} 題出發，將歷屆試題依國中數學單元重新整理，透過出題次數、全國通過率與難度分析，幫助你掌握各單元的命題分布。從考點分析到實際練習，讓每一次複習都有方向。</p>', s, flags=re.S)
 s = rep(s, '<li><b>看考點</b><span>掌握各單元歷年出題次數與配分</span></li>', '<li><b>看考點</b><span>掌握各單元歷年出題次數與通過率</span></li>')
 s = rep(s, '<li><b>找試題</b><span>依考科、年度、難度與單元篩選</span></li>', '<li><b>找試題</b><span>依題型、年度、難度與單元篩選</span></li>')
 s = re.sub(r'<img class="art hero" src="art/hero.webp" alt="[^"]*"', '<img class="art hero" src="art/hero.webp" alt="戴眼鏡、穿制服的柴犬吉祥物站在答案卡上，身邊漂浮著骰子、三角板、立方體與圓規"', s)
@@ -78,7 +86,7 @@ s = rep(s, '<h2><span>單元排行</span><span id="idx-unit">配分</span></h2>'
 
 # overview table head + 非選 section
 s = rep(s, '<thead><tr><th>名次</th><th>單元</th><th>題數</th><th>配分</th><th>占比</th><th class="bar-cell">相對比重</th><th>111–115 每年配分</th></tr></thead>',
-        '<thead><tr><th>名次</th><th>單元</th><th>題數</th><th>占比</th><th>平均通過率</th><th class="bar-cell">相對比重</th><th>111–115 每年題數</th></tr></thead>')
+        f'<thead><tr><th>名次</th><th>單元</th><th>題數</th><th>占比</th><th>平均通過率</th><th class="bar-cell">相對比重</th><th>{YEARS[0]}–{YEARS[-1]} 每年題數</th></tr></thead>')
 s = rep(s, '每年配分色階', '每年題數色階')
 s = rep(s, '少 → 多，格內數字為該年配分</div>', '少 → 多，格內數字為該年題數。難度依心測中心公布的全國通過率：$\\ge70\\%$ 為易、$45\\%$～$69\\%$ 為中、未滿 $45\\%$ 為難；非選擇題一律列為難。</div>')
 s = rep(s, '    </section>\n    <div id="units"',
@@ -196,7 +204,4 @@ s = rep(s, '</style>\n\n<header class="mast">', '.nsb{display:inline-block;min-w
 
 os.makedirs(P('site'), exist_ok=True)
 open(P('site', 'index.html'), 'w', encoding='utf-8').write(s)
-art = s.split('<body>', 1)[1].replace('</body>', '').replace('</html>', '').lstrip('\n')
-assert art.startswith('<title>')
-open(P('site', 'artifact.html'), 'w', encoding='utf-8').write(art)
 print('built', n_q, 'questions,', len(IMGS), 'images')
